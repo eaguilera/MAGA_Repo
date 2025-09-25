@@ -1,7 +1,7 @@
 name: Generate ASCII ArtWork
 on: push
 jobs:
-  first_job:
+  building_job:
     runs-on: ubuntu-latest
     steps:
         - name: Checkout action
@@ -14,3 +14,22 @@ jobs:
           run: |
             chmod +x ./ascii-script.sh
             ./ascii-script.sh
+            sleep 10
+
+  testing_job:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Sleeps for 10 seconds
+          run: sleep 10
+
+        - name: Verifies the file is there
+          run: grep -i "dragon" dragon.txt 
+
+  deployment_job:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Reads the file from production
+          run: cat dragon.txt
+      
+        - name: Deploying into Production
+          run: echo "Deploying into PROD ..."

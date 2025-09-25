@@ -32,7 +32,7 @@ jobs:
         run: cat dragon.txt
       
       - name: Deploying into Production
-        run: echo "Deploying into PROD"
+        run: echo "Deploying into Production"
 
         #- name: List Files
         #  run: ls
