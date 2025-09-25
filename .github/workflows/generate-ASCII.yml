@@ -10,7 +10,7 @@ jobs:
         - name: List all the files in the Repo 
           run: ls -lrat
 
-        - name: Executing Shell Script 
+        - name: Generating the dragon file 
           run: |
             sudo apt-get install cowsay
             cowsay -f dragon "Run for cover, I am a DRAGON...RAWR" >> ./artifacts/dragon.txt
