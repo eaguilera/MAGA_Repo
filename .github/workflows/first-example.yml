@@ -1,7 +1,7 @@
 name: My First Workflow
 on: push
 jobs:
-  first_job:
+  building_job:
     runs-on: ubuntu-latest
     steps:
         - name: Checkout action
@@ -15,6 +15,24 @@ jobs:
 
         - name: Generate ASCII Artwork
           run: cowsay -f dragon "Run for cover, I am a DRAGON...RAWR" >> dragon.txt 
+
+  testing_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testing whether the file dragon is there or not
+        run: Sleeps for 10 seconds
+
+      - name: Verifies the file is there
+        run: grep -i "dragon" dragon.txt 
+
+  deployment_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reads the file from production
+        run: cat dragon.txt
+      
+      - name: Deploying into Production
+        run: echo "Deploying into PROD"
 
         #- name: List Files
         #  run: ls
