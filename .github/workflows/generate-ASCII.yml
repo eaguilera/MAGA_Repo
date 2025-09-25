@@ -13,7 +13,7 @@ jobs:
         - name: Executing Shell Script 
           run: |
             sudo apt-get install cowsay
-            cowsay -f dragon "Run for cover, I am a DRAGON...RAWR" >> dragon.txt
+            cowsay -f dragon "Run for cover, I am a DRAGON...RAWR" >> ./dragon.txt
         
         - name: Upload static files as artifact
           uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
